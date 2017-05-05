@@ -37,7 +37,6 @@ function getProducts(req, res) {
 function saveProduct(req, res) {
     console.log('POST /api/product')
     console.log(req.body)
-
     //  Almacenar producto en BD
     let product = new Product()
     product.name = req.body.name
@@ -45,7 +44,6 @@ function saveProduct(req, res) {
     product.price = req.body.price
     product.category = req.body.category
     product.description = req.body.description
-
     //  Salvar
     product.save((err, productStored) => {
         if (err) res.status(500).send({
